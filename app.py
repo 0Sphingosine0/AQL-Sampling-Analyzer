@@ -14,31 +14,29 @@ st.set_page_config(
     page_icon="🔬",
     layout="wide",
     initial_sidebar_state="expanded"
-    
+)
 # ─────────────────────────────────────────────
-# OPENING / INTRODUCTION (FITUR TAMBAHAN)
+# OPENING / INTRODUCTION
 # ─────────────────────────────────────────────
-with st.expander("ℹ️ TENTANG APLIKASI & KELOMPOK 7", expanded=True):
+with st.container():
+    st.markdown('<div class="opening-card">', unsafe_allow_html=True)
+    st.markdown('<div class="app-title">🔬 AQL Sampling Analyzer</div>', unsafe_allow_html=True)
     st.markdown("""
-    **Selamat Datang di AQL Sampling Analyzer!**
+    Aplikasi ini dirancang untuk memudahkan pengambilan keputusan penerimaan lot produk berdasarkan standar internasional **ISO 2859-1**.
     
-    Aplikasi ini dirancang sebagai alat bantu interaktif untuk mempermudah proses *Quality Control* (QC) dan pengambilan keputusan dalam penerimaan lot produk. 
+    **Kegunaan:**
+    - Menentukan ukuran sampel berdasarkan ukuran lot secara otomatis.
+    - Menentukan kriteria jumlah cacat (*Acceptance/Rejection Number*) sesuai AQL.
+    - Membantu tim *Quality Control* dalam proses inspeksi atribut yang efisien dan akurat.
     
-    **Tujuan & Kegunaan:**
-    - Menentukan ukuran sampel (*Sample Size*) secara otomatis berdasarkan jumlah produksi lot/batch.
-    - Menetapkan kriteria batas penerimaan (*Acceptance Number/Ac*) dan penolakan (*Rejection Number/Re*).
-    - Meminimalisir kesalahan interpretasi tabel manual dan menyediakan laporan serta visualisasi inspeksi atribut yang efisien.
-    
-    **Sumber Data (Standar Referensi):**
-    Seluruh logika kalkulasi dan tabel acuan dalam aplikasi ini merujuk pada **Standar Internasional ISO 2859-1** *(Sampling procedures for inspection by attributes)* untuk inspeksi umum level II (Single Sampling Normal).
-    
-    **Dikembangkan Oleh Kelompok 7:**
-    1. **Iren Nethania Rifai** (2560644)
-    2. **Mayang Devani Dwi Nanda** (2560669)
-    3. **Putri Anisa** (2560737)
-    4. **Shally Ardhany** (2560778)
-    5. **Shiela Feriska Demayanti** (2560779)
+    **Anggota Kelompok 7:**
+    - **Iren Nethania Rifai** (2560644)
+    - **Mayang Devani Dwi Nanda** (2560669)
+    - **Putri Anisa** (2560737)
+    - **Shally Ardhany** (2560778)
+    - **Shiela Feriska Demayanti** (2560779)
     """)
+    st.markdown('</div>', unsafe_allow_html=True)
 
 # ─────────────────────────────────────────────
 # FRUTIGER AERO CSS
@@ -884,10 +882,8 @@ with tab3:
 with tab4:
     st.markdown('<div class="section-title">Laporan Hasil Sampling</div>', unsafe_allow_html=True)
 
-      # Atur ke zona waktu Jakarta (WIB)
-    waktu_jakarta = ZoneInfo("Asia/Jakarta")
-    now = datetime.now(waktu_jakarta).strftime("%d %B %Y, %H:%M WIB")
-
+    from datetime import datetime
+    now = datetime.now().strftime("%d %B %Y, %H:%M")
 
     report_text = f"""
 ## 📄 LAPORAN HASIL SAMPLING AQL
