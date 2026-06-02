@@ -15,6 +15,28 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded"
 )
+# ─────────────────────────────────────────────
+# OPENING / INTRODUCTION
+# ─────────────────────────────────────────────
+with st.container():
+    st.markdown('<div class="opening-card">', unsafe_allow_html=True)
+    st.markdown('<div class="app-title">🔬 AQL Sampling Analyzer</div>', unsafe_allow_html=True)
+    st.markdown("""
+    Aplikasi ini dirancang untuk memudahkan pengambilan keputusan penerimaan lot produk berdasarkan standar internasional **ISO 2859-1**.
+    
+    **Kegunaan:**
+    - Menentukan ukuran sampel berdasarkan ukuran lot secara otomatis.
+    - Menentukan kriteria jumlah cacat (*Acceptance/Rejection Number*) sesuai AQL.
+    - Membantu tim *Quality Control* dalam proses inspeksi atribut yang efisien dan akurat.
+    
+    **Anggota Kelompok 7:**
+    - **Iren Nethania Rifai** (2560644)
+    - **Mayang Devani Dwi Nanda** (2560669)
+    - **Putri Anisa** (2560737)
+    - **Shally Ardhany** (2560778)
+    - **Shiela Feriska Demayanti** (2560779)
+    """)
+    st.markdown('</div>', unsafe_allow_html=True)
 
 # ─────────────────────────────────────────────
 # FRUTIGER AERO CSS
