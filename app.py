@@ -84,6 +84,11 @@ st.markdown("""
     animation: drift1 18s ease-in-out infinite alternate;
     pointer-events: none;
     z-index: 0;
+.stApp { 
+  background: var(--bg) !important; 
+  color: var(--text) !important; 
+  font-family: 'Inter', sans-serif; 
+}
 }
 .stApp::after {
     content: '';
