@@ -885,7 +885,10 @@ with tab4:
     st.markdown('<div class="section-title">Laporan Hasil Sampling</div>', unsafe_allow_html=True)
 
     from datetime import datetime
-    now = datetime.now().strftime("%d %B %Y, %H:%M")
+    from zoneinfo import ZoneInfo
+
+    # Mengunci zona waktu secara eksplisit ke WIB (Asia/Jakarta)
+    now = datetime.now(ZoneInfo("Asia/Jakarta")).strftime("%d %B %Y, %H:%M WIB")
 
     report_text = f"""
 ## 📄 LAPORAN HASIL SAMPLING AQL
